@@ -37,7 +37,7 @@ function TaskItem(props) {
   }
   return (
     <div className="con">
-      <div className="card">
+      <div className="card ">
         <div className="card-top">
           <p className="card-title">
             <b>Title: {taskName}</b>

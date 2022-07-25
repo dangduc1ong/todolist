@@ -1,7 +1,7 @@
 /* import 'bootstrap/dist/css/bootstrap.min.css'; */
 
 .card {
-    background-color: #222831;
+    text-align: center;
     height: 50rem;
     width: 250px;
     border-radius: 5px;
@@ -29,11 +29,11 @@ button {
 .con {
   width: 250px;
   font-family: 'Baloo Paaji 2', cursive;
-  background-color: rgb(45, 85, 45);
+  
     
 }
 .draw-border {
-    box-shadow: inset 0 0 0 2px #58cdd1;
+    box-shadow: inset 0 0 0 2px #6ae8ed;
     color: #58afd1;
     -webkit-transition: color 0.25s 0.0833333333s;
     transition: color 0.25s 0.0833333333s;
