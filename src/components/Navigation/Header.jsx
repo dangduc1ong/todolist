@@ -10,21 +10,21 @@ function Header() {
   // var modal = document.getElementById("myModal");
   // var span = document.getElementsByClassName("close")[0];
 
-var tasksTitle = [],tasksCreator = [],tasksDesc= [];
-var objTask = {}
-function btnAdd(){
-  const title = document.getElementById("tittle").value;
-  const create = document.getElementById("creator").value;
-  const description = document.getElementById("description").value;
+  var tasksTitle = [],
+    tasksCreator = [],
+    tasksDesc = [];
+  var objTask = {};
+  function btnAdd() {
+    const title = document.getElementById("tittle").value;
+    const create = document.getElementById("creator").value;
+    const description = document.getElementById("description").value;
 
-  tasksTitle.push(title);
-  tasksCreator.push(create);
-  tasksDesc.push(description);
+    tasksTitle.push(title);
+    tasksCreator.push(create);
+    tasksDesc.push(description);
 
-  return objTask.push(tasksTitle,tasksCreator,tasksDesc);
-
-
-}
+    return objTask.push(tasksTitle, tasksCreator, tasksDesc);
+  }
 
   function create() {
     // if (status === "none") {
@@ -34,7 +34,6 @@ function btnAdd(){
     //   setStatus("none");
     //   document.getElementById("r").style.display = "block";
     // }
-    
 
     document.getElementById("myModal").style.display = "block";
   }
@@ -61,12 +60,9 @@ function btnAdd(){
                     data-sb-validations="required"
                   />
                   <label htmlFor="tittle">Tittle</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="tittle:required"
-                  >
-                    Tittle is required.
-                  </div>
+                  {/* {!formValue.title && (
+                    <div style={{ color: "red" }}>Tittle is required.</div>
+                  )} */}
                 </div>
                 <div className="form-floating mb-3">
                   <input
@@ -77,12 +73,9 @@ function btnAdd(){
                     data-sb-validations="required"
                   />
                   <label htmlFor="creator">Creator</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="creator:required"
-                  >
-                    Creator is required.
-                  </div>
+                  {/* {!formValue.author && (
+                    <div style={{ color: "red" }}>Creator is required.</div>
+                  )} */}
                 </div>
                 <div className="form-floating mb-3">
                   <textarea
@@ -94,12 +87,9 @@ function btnAdd(){
                     data-sb-validations="required"
                   />
                   <label htmlFor="description">Description</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="description:required"
-                  >
-                    Description is required.
-                  </div>
+                  {/* {!formValue.description && (
+                    <div style={{ color: "red" }}>Description is required.</div>
+                  )} */}
                 </div>
               </form>
             </div>

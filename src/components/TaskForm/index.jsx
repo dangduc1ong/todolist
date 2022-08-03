@@ -13,12 +13,12 @@ function TaskForm(props) {
     setFormValue({
       ...formValue,
       [e.target.name]: e.target.value,
-    })
+    });
   };
   const handleChangeForm = (e) => {
     e.preventDefault();
     const data = JSON.parse(localStorage.getItem("data")) || [];
-    data.push(formValue)
+    data.push(formValue);
     localStorage.setItem("data", JSON.stringify(data));
   };
   return (
@@ -35,23 +35,25 @@ function TaskForm(props) {
           data-sb-validations="required"
         />
         <label htmlFor="tittle">Tittle</label>
-        <div className="invalid-feedback" data-sb-feedback="tittle:required">
-          Tittle is required.
-        </div>
+        {!formValue.title && (
+          <div style={{ color: "red" }}>Tittle is required.</div>
+        )}
       </div>
       <div className="form-floating mb-3">
         <input
           className="form-control"
           name="author"
-          id="creator"
+          id="author"
           type="text"
-          placeholder="Creator"
+          placeholder="author"
           data-sb-validations="required"
+          value={formValue.author}
+          onChange={handleChangeFile}
         />
-        <label htmlFor="creator">Creator</label>
-        <div className="invalid-feedback" data-sb-feedback="creator:required">
-          Creator is required.
-        </div>
+        <label htmlFor="author">Creator</label>
+        {!formValue.author && (
+          <div style={{ color: "red" }}>Creator is required.</div>
+        )}
       </div>
       <div className="form-floating mb-3">
         <textarea
@@ -62,14 +64,13 @@ function TaskForm(props) {
           placeholder="Enter your message here..."
           style={{ height: "10rem" }}
           data-sb-validations="required"
+          value={formValue.description}
+          onChange={handleChangeFile}
         />
         <label htmlFor="description">Description</label>
-        <div
-          className="invalid-feedback"
-          data-sb-feedback="description:required"
-        >
-          Description is required.
-        </div>
+        {!formValue.description && (
+          <div style={{ color: "red" }}>Description is required.</div>
+        )}
       </div>
 
       <div className="">
@@ -93,6 +94,5 @@ function TaskForm(props) {
     </form>
   );
 }
-
 
 export default TaskForm;

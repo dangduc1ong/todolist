@@ -52,25 +52,29 @@ function TodoList(props) {
   //     taskAuthor:"Duc Long" ,
   //     taskDescription:"Learn React",
   //   },
-    
+
   // ];
 
-  const cardList = JSON.parse(localStorage.getItem("data"))
-  return (
-    <ul className="card-list">{
-      cardList.map(card =>(
-        <li key={card.id}><TodoItem card = {card}/>
+  // localStorage.setItem("data", JSON.stringify(cardList))
 
-        </li>
-      ))
-    }
+  const cardList = JSON.parse(localStorage.getItem("data"));
+  return (
+    <ul className="card-list">
+      {cardList &&
+        cardList.map((card) => (
+          <li key={card.id}>
+            <TodoItem card={card} />
+          </li>
+        ))}
     </ul>
   );
 }
 export default TodoList;
 
-{/* <ul className="tasks">
+{
+  /* <ul className="tasks">
     {tasksList.length && tasksList.map((item, index) =>(
         <TodoItem item={item} idx={index} key={item.id}/>
     ))}
-</ul> */}
+</ul> */
+}

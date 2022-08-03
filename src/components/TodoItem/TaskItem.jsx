@@ -16,8 +16,8 @@ TodoItem.propTypes = {
 //   taskStatus: "New",
 //   taskDescription: "Task description",
 // };
-function TodoItem({card}) {
-//  const { taskName, taskAuthor, taskStatus, taskDescription } = props;
+function TodoItem({ card }) {
+  //  const { taskName, taskAuthor, taskStatus, taskDescription } = props;
   const [status, setStatus] = useState("New");
   const [btnStatus, setBtnStatus] = useState("Start");
   const [statusColor, setColor] = useState("#33FF99");
@@ -36,15 +36,15 @@ function TodoItem({card}) {
       setColor("#33FF99");
     }
   }
-  function handleStateChange(e){
+  function handleStateChange(e) {
     setStatus(e.target.value);
-    if(e.target.value === "New"){
+    if (e.target.value === "New") {
       setColor("#33FF99");
     }
-    if(e.target.value === "Doing"){
+    if (e.target.value === "Doing") {
       setColor("orange");
     }
-    if(e.target.value === "Done"){
+    if (e.target.value === "Done") {
       setColor("blue");
     }
   }
@@ -53,17 +53,17 @@ function TodoItem({card}) {
       <div className="card ">
         <div className="card-top">
           <p className="card-title">
-            <b>Title: {card.taskName}</b>
+            <b>Title: {card.title}</b>
           </p>
-          <p className="card-text">Creator: {card.taskAuthor}</p>
-          <p className="card-text " style={{ color: `${statusColor}` }} >
+          <p className="card-text">Creator: {card.author}</p>
+          <p className="card-text " style={{ color: `${statusColor}` }}>
             Status: {status}
           </p>
           {/* <p style={{ color: `${statusColor}` }}>Status: {status}</p> */}
         </div>
         <div className="task-description">
           <b>Description:</b>
-          <p>{card.taskDescription}</p>
+          <p>{card.description}</p>
         </div>
         <div className="d-flex text-center m-auto">
           <button
@@ -74,7 +74,7 @@ function TodoItem({card}) {
             {btnStatus}
           </button>
         </div>
-        
+
         <div className="p-1">
           <select onChange={handleStateChange}>
             <option value="New">New</option>
