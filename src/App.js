@@ -2,11 +2,11 @@
 import React from "react";
 import "./App.css"
 // import TaskItem from "./components/TaskItem/TaskItem";
-import TodoList from "./components/TodoList/TaskList";
+import TodoList from "./components/TodoList";
 import Header from "./components/Navigation/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import TaskForm from "./components/TaskForm";
 import {Link} from "react-router-dom"
 function App() {

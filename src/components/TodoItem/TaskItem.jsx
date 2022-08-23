@@ -1,6 +1,7 @@
 import "./style.css";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Delete } from "../../api/methodApi";
 
 TodoItem.propTypes = {
   // taskName: PropTypes.string,
@@ -36,6 +37,10 @@ function TodoItem({ card }) {
       setColor("#33FF99");
     }
   }
+  function Del(id){
+    Delete(id)
+      
+  }
   function handleStateChange(e) {
     setStatus(e.target.value);
     if (e.target.value === "New") {
@@ -49,7 +54,7 @@ function TodoItem({ card }) {
     }
   }
   return (
-    <div className="con">
+    <div className="con" >
       <div className="card ">
         <div className="card-top">
           <p className="card-title">
@@ -82,6 +87,10 @@ function TodoItem({ card }) {
             <option value="Done">Done</option>
           </select>
         </div>
+        <div>
+          <button onClick={()=>Del(card.id)}>Del</button>
+        </div>
+
       </div>
     </div>
   );

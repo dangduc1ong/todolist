@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Post } from "../../api/methodApi";
+import {useNavigate} from "react-router-dom";
 TaskForm.propTypes = {};
 function TaskForm(props) {
+  let navi = useNavigate()
+
   const [formValue, setFormValue] = useState({
     title: "",
     author: "",
@@ -17,9 +21,8 @@ function TaskForm(props) {
   };
   const handleChangeForm = (e) => {
     e.preventDefault();
-    const data = JSON.parse(localStorage.getItem("data")) || [];
-    data.push(formValue);
-    localStorage.setItem("data", JSON.stringify(data));
+    Post(formValue)
+    navi("/")
   };
   return (
     <form onSubmit={handleChangeForm}>
@@ -78,7 +81,7 @@ function TaskForm(props) {
           type="Submit"
           id="add"
           className="btn btn-success"
-          data-dismiss="modal"
+          
         >
           Add
         </button>
@@ -86,7 +89,7 @@ function TaskForm(props) {
           type="button"
           id="close"
           className="btn btn-danger"
-          data-dismiss="modal"
+          
         >
           Close
         </button>
